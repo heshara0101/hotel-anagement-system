@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings Calendar - Hotel Admin</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="admin-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <h2>Hotel Admin</h2>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">⚙️ Web Portal CMS</a>
+                <a href="bookings.html" class="nav-item active">📅 Bookings</a>
+                <a href="rooms-management.html" class="nav-item">🛏️ Manage Rooms</a>
+                <a href="../index.html" class="nav-item exit-link">🌐 View Website</a>
+            </nav>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <header class="top-bar flex-between">
+                <div>
+                    <h1>Bookings & Availability</h1>
+                    <p>Track room occupancy, active stays, and upcoming guest check-ins.</p>
+                </div>
+                <button id="open-booking-modal" class="btn btn-primary">+ Manual Booking</button>
+            </header>
+
+            <!-- Calendar Control Toolbar -->
+            <div class="card calendar-controls flex-between">
+                <div class="month-selector">
+                    <button id="prev-month" class="btn btn-secondary">&lt;</button>
+                    <h3 id="current-month-label">August 2026</h3>
+                    <button id="next-month" class="btn btn-secondary">&gt;</button>
+                </div>
+                <div class="legend">
+                    <span class="legend-item"><span class="legend-color legend-confirmed"></span> Confirmed</span>
+                    <span class="legend-item"><span class="legend-color legend-pending"></span> Pending</span>
+                </div>
+            </div>
+
+            <!-- Timeline Calendar Grid -->
+            <div class="card calendar-card">
+                <div class="calendar-container">
+                    <div class="timeline-header" id="timeline-header">
+                        <!-- Dates (1-31) generated dynamically via JS -->
+                    </div>
+                    <div class="timeline-body" id="timeline-body">
+                        <!-- Room rows and reservation bars generated dynamically via JS -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Form for Manual Walk-in Bookings -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content card">
+            <div class="modal-header">
+                <h3>Create New Reservation</h3>
+                <span id="close-modal" class="close-btn">&times;</span>
+            </div>
+            
+            <form id="add-booking-form">
+                <div class="form-group">
+                    <label for="guest-name">Guest Name</label>
+                    <input type="text" id="guest-name" class="form-control" placeholder="e.g. John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="select-room">Select Room</label>
+                    <select id="select-room" class="form-control" required>
+                        <option value="101">Room 101 (Deluxe)</option>
+                        <option value="102">Room 102 (Deluxe)</option>
+                        <option value="201">Suite 201 (Executive)</option>
+                    </select>
+                </div>
+
+                <div class="form-group flex-gap">
+                    <div style="flex: 1;">
+                        <label for="check-in">Check-In Day</label>
+                        <input type="number" id="check-in" class="form-control" min="1" max="31" placeholder="e.g. 5" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="check-out">Check-Out Day</label>
+                        <input type="number" id="check-out" class="form-control" min="1" max="31" placeholder="e.g. 9" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="cancel-modal" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Booking</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Page Specific Script -->
+    <script src="assets/js/bookings.js"></script>
+</body>
+</html>

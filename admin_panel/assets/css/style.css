@@ -1,0 +1,7 @@
+/* admin_panel/assets/css/style.css */
+
+@import 'components/layout.css';
+@import 'components/buttons.css';
+@import 'components/forms.css';
+@import 'components/tables.css';
+@import 'components/calendar.css';

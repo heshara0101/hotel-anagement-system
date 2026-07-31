@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay - GrandView Hotel</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">GrandView Hotel</a>
+        <nav class="nav-links">
+            <a href="index.html#rooms">Rooms</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#Gallery">Gallery</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="Booking.html" class="btn btn-primary">Book Now</a>
+        </nav>
+    </header>
+
+    <main class="container" style="max-width: 600px;">
+        <h2>Reserve a Room</h2>
+        <form class="card booking-form" id="bookingForm" style="margin-top: 1.5rem;">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" class="form-control" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="roomType">Select Room</label>
+                <select id="roomType" class="form-control" required>
+                    <option value="Deluxe Ocean View Room">Deluxe Ocean View Room ($220/night)</option>
+                    <option value="Executive Suite">Executive Suite ($350/night)</option>
+                    <option value="Poolside Garden Room">Poolside Garden Room ($180/night)</option>
+                </select>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                    <label for="checkIn">Check-In Date</label>
+                    <input type="date" id="checkIn" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkOut">Check-Out Date</label>
+                    <input type="date" id="checkOut" class="form-control" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top: 1rem;">Confirm Reservation</button>
+        </form>
+    </main>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Reservation submitted successfully! We look forward to hosting you.');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
