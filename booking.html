@@ -9,7 +9,7 @@
 <body>
 
     <header class="navbar">
-        <a href="index.html" class="logo">GrandView Hotel</a>
+        <a href="index.html" class="logo">GrandView</a>
         <nav class="nav-links">
             <a href="index.html#rooms">Rooms</a>
             <a href="index.html#services">Services</a>
@@ -19,9 +19,11 @@
         </nav>
     </header>
 
-    <main class="container" style="max-width: 600px;">
-        <h2>Reserve a Room</h2>
-        <form class="card booking-form" id="bookingForm" style="margin-top: 1.5rem;">
+    <main class="container" style="max-width: 600px; margin-top: 3rem;">
+        <h2 class="section-title">Reserve Your Stay</h2>
+        <p class="section-subtitle">Complete your reservation in just a few quick steps.</p>
+        
+        <form class="card booking-form" id="bookingForm" style="padding: 2rem; margin-top: 1.5rem;">
             <div class="form-group">
                 <label for="fullName">Full Name</label>
                 <input type="text" id="fullName" class="form-control" placeholder="John Doe" required>
@@ -33,7 +35,7 @@
             </div>
 
             <div class="form-group">
-                <label for="roomType">Select Room</label>
+                <label for="roomType">Select Accommodation</label>
                 <select id="roomType" class="form-control" required>
                     <option value="Deluxe Ocean View Room">Deluxe Ocean View Room ($220/night)</option>
                     <option value="Executive Suite">Executive Suite ($350/night)</option>

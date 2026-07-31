@@ -79,13 +79,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     <ul class="room-features">
                         ${room.features.map(f => `<li>• ${f}</li>`).join('')}
                     </ul>
-                    <button class="btn btn-primary btn-block" onclick="selectRoom(${room.id})">Book Now</button>
+                    <a href="Booking.html" class="btn btn-primary btn-block">Book Room</a>
                 </div>
             </div>
         `).join('');
     }
-});
 
-function selectRoom(roomId) {
-    alert(`Room #${roomId} selected! Connect this button to your checkout page or booking API.`);
-}
+    // 3. Scroll Reveal Animation Trigger
+    const observerOptions = {
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(section => {
+        observer.observe(section);
+    });
+});
