@@ -5,3 +5,52 @@
 @import 'components/forms.css';
 @import 'components/tables.css';
 @import 'components/calendar.css';
+
+/* Stat Cards for Dashboard */
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    border-left: 4px solid var(--accent-gold);
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-light);
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 2rem;
+        border-bottom: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-soft);
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero-banner h1 {
+        font-size: 2.25rem;
+    }
+
+    .hero-banner p {
+        font-size: 1rem;
+    }
+
+    .container {
+        margin: 3rem auto;
+    }
+}
